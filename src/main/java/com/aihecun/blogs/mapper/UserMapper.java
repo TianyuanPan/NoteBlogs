@@ -15,35 +15,64 @@ public interface UserMapper extends BaseDaoMybatisPGSQLImpl.MybatisMultiDao<User
      * @param model
      * @return active lines
      */
-    @Insert("INSERT INTO tb_users (id_user, user_number, user_name, password, created, flag) VALUES (#{idUser}, #{userNumber}, #{userName}, #{password}, #{created}, #{flag})")
+    @Insert("INSERT INTO tb_users (" +
+            "\"idUser\", \"userNo\", \"idRole\", \"userName\", password, \"userTitle\"," +
+            "sex, birthday, \"bitCoins\", email, address, mobile, flag," +
+            "\"countFans\", \"countArticle\", \"countShare\", \"countComment\", \"countSays\"," +
+            "\"timeCreated\", \"timeLastLogin\", \"timeUpdated\") " +
+            "VALUES (#{idUser}, #{userNo}, #{idRole}, #{userName}, #{password}," +
+            "#{userTitle}, #{sex}, #{birthday}, #{bitCoins}, #{email}, #{address}," +
+            "#{mobile}, #{flag}, #{countFans}, #{countArticle}, #{countShare}," +
+            "#{countComment}, #{countSays}, #{timeCreated}, #{timeLastLogin}," +
+            "#{timeUpdated})")
     int createNewUser(User model);
 
 
     /**
      *
-     * @param properties
-     * @param idUser
+     * @param model
      * @return
      */
-    @Update("UPDATE  tb_users SET #{properties} WHERE id_user=#{idUser}")
-    int updateUser(@Param("properties") String properties, @Param("idUser") String idUser);
+    @Update("UPDATE tb_users SET" +
+            "\"idRole\" = #{idRole}, \"userName\" = #{userName}, password = #{password}," +
+            "\"userTitle\" = #{userTitle}, sex = #{sex}, birthday = #{birthday}," +
+            "\"bitCoins\" = #{bitCoins}, email = #{email}, address = #{address}," +
+            "mobile = #{mobile}, flag = #{flag}, \"countFans\" = #{countFans}," +
+            "\"countArticle\" = #{countArticle}, \"countShare\" = #{countShare}," +
+            "\"countComment\" = #{countComment}, \"countSays\" = #{countSays}," +
+            "\"timeCreated\" = #{timeCreated}, \"timeLastLogin\" = #{timeLastLogin}," +
+            "\"timeUpdated\" = #{timeUpdated} WHERE \"idUser\" = #{idUser}")
+    int updateUser(User model);
+
 
     /**
      *
-     * @param userNumber
+     * @param userNo
      * @return
      */
-    @Select("SELECT * FROM tb_users WHERE user_number=#{userNumber}")
-    User getUser(@Param("userNumber") String userNumber);
+    @Select("SELECT * FROM tb_users WHERE \"userNo\"=#{userNo}")
+    User getUserByNo(@Param("userNo") String userNo);
+
 
     /**
-     * 用户登陆
-     * @param userNumber
+     *
+     * @param idUser
+     * @return
+     */
+    @Select("SELECT * FROM tb_users WHERE \"idUser\"=#{idUser}")
+    User getUserById(@Param("idUser") String idUser);
+
+
+    /**
+     *
+     * @param userNo
      * @param password
      * @return
      */
-    @Select("SELECT * FROM tb_users WHERE user_number=#{userNumber} AND password=#{password}")
-    User login(@Param("userNumber") String userNumber,@Param("password") String password);
+    @Select("SELECT * FROM tb_users WHERE \"userNo\"=#{userNo} AND password=#{password}")
+    User login(@Param("userNo") String userNo,@Param("password") String password);
 
 
 }
+
+

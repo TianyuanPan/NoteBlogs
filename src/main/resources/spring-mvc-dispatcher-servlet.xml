@@ -3,7 +3,26 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <bean class="org.springframework.http.MediaType">
+                                <constructor-arg index="0" value="text" />
+                                <constructor-arg index="1" value="plain" />
+                                <constructor-arg index="2" value="UTF-8" />
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
 
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
@@ -13,5 +32,14 @@
         <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--<bean id="userArticleSectionR" class="com.aihecun.blogs.controller.flowController.UserArticleSectionR">-->
+    <!--</bean>-->
+
+    <!--<mvc:resources mapping="/css/**" location="pages/css/"/>-->
+    <!--<mvc:resources mapping="/js/**" location="pages/js/"/>-->
+    <!--<mvc:resources mapping="/images/**" location="pages/images/"/>-->
+    <!--<mvc:resources mapping="/errors/**" location="pages/errors/"/>-->
+
 
 </beans>

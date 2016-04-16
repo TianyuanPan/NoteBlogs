@@ -6,9 +6,11 @@ import com.aihecun.blogs.service.UserService;
 import com.aihecun.blogs.service.base.BaseService;
 import com.aihecun.blogs.service.base.BaseServiceImpl;
 import com.aihecun.blogs.util.Page;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 /**
@@ -25,24 +27,29 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
 
     @Override
-    public User login(String userNumber, String password) throws Exception {
-        return dao.login(userNumber, password);
+    public User login(String userNo, String password) throws Exception {
+        return dao.login(userNo, password);
     }
 
     @Override
-    public int delete(Object id) {
-        return dao.delete(id);
+    public int createNewUser(User model) throws Exception {
+        return dao.createNewUser(model);
     }
 
     @Override
-    public int insert(User model) {
-        return dao.insert(model);
+    public int updateUser(User model) throws Exception {
+        return dao.updateUser(model);
+    }
+
+
+    @Override
+    public User getUserByNo(@Param("userNo") String userNo) throws Exception {
+        return dao.getUserByNo(userNo);
     }
 
     @Override
-    public int update(User model) {
-        return dao.update(model);
+    public User getUserById(String idUser) throws Exception {
+        return dao.getUserById(idUser);
     }
-
 
 }

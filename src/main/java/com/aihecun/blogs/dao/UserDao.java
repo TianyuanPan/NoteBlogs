@@ -2,15 +2,12 @@ package com.aihecun.blogs.dao;
 
 import com.aihecun.blogs.dao.base.BaseDao;
 import com.aihecun.blogs.model.User;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * Created by TianyuanPan on 3/22/16.
  */
 
-@Repository
 public interface UserDao extends BaseDao<User> {
 
     /**
@@ -18,34 +15,41 @@ public interface UserDao extends BaseDao<User> {
      * @param model 添加的数据
      * @return 改变行数
      */
-    int createNewUser(User model);
+    int createNewUser(User model) throws  Exception;
 
 
 
     /**
      *
-     * @param properties
+     * @param model
+     * @return
+     */
+    int updateUser(User model) throws  Exception;
+
+
+    /**
+     *
+     * @param userNo
+     * @return
+     */
+    User getUserByNo(String userNo) throws  Exception;
+
+
+    /**
+     *
      * @param idUser
      * @return
+     * @throws Exception
      */
-    int updateUser(String properties, String idUser);
-
-
-    /**
-     *
-     * @param userNumber
-     * @return
-     */
-    User getUser(String userNumber);
-
+    User getUserById(String idUser) throws Exception;
 
     /**
      * 用户登陆
-     * @param userNumber
+     * @param userNo
      * @param password
      * @return
      */
-    User login(String userNumber ,String password) throws Exception;
+    User login(String userNo, String password) throws Exception;
 
 
 }

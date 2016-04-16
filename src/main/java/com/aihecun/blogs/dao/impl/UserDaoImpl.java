@@ -26,19 +26,27 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
         return mapper.createNewUser(model);
     }
 
+
     @Override
-    public int updateUser(String properties, String idUser) {
-        return mapper.updateUser(properties, idUser);
+    public int updateUser(User model) {
+        return mapper.updateUser(model);
     }
 
     @Override
-    public User getUser(String userNumber) {
-        return mapper.getUser(userNumber);
+    public User getUserByNo(String userNo) {
+        return mapper.getUserByNo(userNo);
     }
 
     @Override
-    public User login(String userNumber, String password) throws Exception {
-        return mapper.login(userNumber, password);
+    public User getUserById(String idUser) throws Exception {
+
+        return mapper.getUserById(idUser);
+    }
+
+
+    @Override
+    public User login(String userNo, String password) throws Exception {
+        return mapper.login(userNo, password);
     }
 
 

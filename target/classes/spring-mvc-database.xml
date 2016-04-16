@@ -62,6 +62,7 @@
     </bean>
 
 
+
  <!--   <bean id="deviceMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
         <property name="mapperInterface" columnName="com.wifi.wifi_ac.mapper.DeviceMapper" />

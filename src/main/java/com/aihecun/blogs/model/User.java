@@ -4,6 +4,8 @@ import com.aihecun.blogs.annotations.dbmodel.FK;
 import com.aihecun.blogs.annotations.dbmodel.PK;
 import com.aihecun.blogs.annotations.dbmodel.Table;
 
+import java.util.Date;
+
 /**
  * Created by TianyuanPan on 3/21/16.
  */
@@ -11,72 +13,60 @@ import com.aihecun.blogs.annotations.dbmodel.Table;
 public class User {
 
     @PK
-    private  String id_user;
-
+    private  String idUser;
     @PK
-    private String user_number;
-
+    private String userNo;
     @FK
-    private String id_role;
-
-    private String user_name;
+    private String idRole;
+    private String userName;
     private String password;
-    private String user_title;
-    private String birthday;
-    private String created_date;
-    private String created_time;
-    private String last_login_date;
-    private String last_login_time;
-    private String update_date;
-    private String update_time;
+    private String userTitle;
+    private short  sex;
+    private Date birthday;
+    private int bitCoins;
     private String email;
-    private String mobile;
     private String address;
-    private int bit_coins;
-    private short    sex;
-    private short count_fans;
-    private short count_article;
-    private short count_share;
-    private short count_comment;
-    private short count_says;
-    private short  flag;
-
-
-    public void User(){
-
-    }
-
+    private String mobile;
+    private boolean  flag;
+    private short countFans;
+    private short countArticle;
+    private short countShare;
+    private short countComment;
+    private short countSays;
+    private Date timeCreated;
+    private Date timeLastLogin;
+    private Date timeUpdated;
 
     public String getIdUser() {
-        return id_user;
+        return idUser;
     }
 
-    public void setIdUser(String id_user) {
-        this.id_user = id_user;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
-    public String getUserNumber() {
-        return user_number;
+    public String getUserNo() {
+        return userNo;
     }
 
-    public void setUserNumber(String user_number) {
-        this.user_number = user_number;
+    public void setUserNo(String userNo) {
+        this.userNo = userNo;
     }
 
     public String getIdRole() {
-        return id_role;
+        return idRole;
     }
 
-    public void setIdRole(String id_role) {
-        this.id_role = id_role;
+    public void setIdRole(String idRole) {
+        this.idRole = idRole;
     }
 
     public String getUserName() {
-        return user_name;
+        return userName;
     }
 
-    public void setUserName(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -88,21 +78,36 @@ public class User {
     }
 
     public String getUserTitle() {
-        return user_title;
+        return userTitle;
     }
 
-    public void setUserTitle(String user_title) {
-        this.user_title = user_title;
+    public void setUserTitle(String userTitle) {
+        this.userTitle = userTitle;
     }
 
-    public String getBirthday() {
+    public short getSex() {
+        return sex;
+    }
+
+    public void setSex(short sex) {
+        this.sex = sex;
+    }
+
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
+    public int getBitCoins() {
+        return bitCoins;
+    }
+
+    public void setBitCoins(int bitCoins) {
+        this.bitCoins = bitCoins;
+    }
 
     public String getEmail() {
         return email;
@@ -120,70 +125,6 @@ public class User {
         this.address = address;
     }
 
-    public int getBitCoins() {
-        return bit_coins;
-    }
-
-    public void setBitCoins(int bit_coins) {
-        this.bit_coins = bit_coins;
-    }
-
-    public short getSex() {
-        return sex;
-    }
-
-    public void setSex(short sex) {
-        this.sex = sex;
-    }
-
-    public short getCountFans() {
-        return count_fans;
-    }
-
-    public void setCountFans(short count_fans) {
-        this.count_fans = count_fans;
-    }
-
-    public short getCountArticle() {
-        return count_article;
-    }
-
-    public void setCountArticle(short count_article) {
-        this.count_article = count_article;
-    }
-
-    public short getCountShare() {
-        return count_share;
-    }
-
-    public void setCountShare(short count_share) {
-        this.count_share = count_share;
-    }
-
-    public short getCountComment() {
-        return count_comment;
-    }
-
-    public void setCountComment(short count_comment) {
-        this.count_comment = count_comment;
-    }
-
-    public short getCountSays() {
-        return count_says;
-    }
-
-    public void setCountSays(short count_says) {
-        this.count_says = count_says;
-    }
-
-    public short getFlag() {
-        return flag;
-    }
-
-    public void setFlag(short flag) {
-        this.flag = flag;
-    }
-
     public String getMobile() {
         return mobile;
     }
@@ -192,51 +133,76 @@ public class User {
         this.mobile = mobile;
     }
 
-    public String getLastLoginDate() {
-        return last_login_date;
+    public boolean isFlag() {
+        return flag;
     }
 
-    public void setLastLoginDate(String last_login_date) {
-        this.last_login_date = last_login_date;
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
-    public String getLastLoginTime() {
-        return last_login_time;
+    public short getCountFans() {
+        return countFans;
     }
 
-    public void setLastLoginTime(String last_login_time) {
-        this.last_login_time = last_login_time;
+    public void setCountFans(short countFans) {
+        this.countFans = countFans;
     }
 
-    public String getUpdateDate() {
-        return update_date;
+    public short getCountArticle() {
+        return countArticle;
     }
 
-    public void setUpdateDate(String update_date) {
-        this.update_date = update_date;
+    public void setCountArticle(short countArticle) {
+        this.countArticle = countArticle;
     }
 
-    public String getUpdateTime() {
-        return update_time;
+    public short getCountShare() {
+        return countShare;
     }
 
-    public void setUpdateTime(String update_time) {
-        this.update_time = update_time;
+    public void setCountShare(short countShare) {
+        this.countShare = countShare;
     }
 
-    public String getCreatedDate() {
-        return created_date;
+    public short getCountComment() {
+        return countComment;
     }
 
-    public void setCreatedDate(String created_date) {
-        this.created_date = created_date;
+    public void setCountComment(short countComment) {
+        this.countComment = countComment;
     }
 
-    public void setCreatedTime(String created_time) {
-        this.created_time = created_time;
+    public short getCountSays() {
+        return countSays;
     }
 
-    public String getCreatedTime() {
-        return created_time;
+    public void setCountSays(short countSays) {
+        this.countSays = countSays;
     }
+
+    public Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    public void setTimeCreated(Date timeCreated) {
+        this.timeCreated = timeCreated;
+    }
+
+    public Date getTimeLastLogin() {
+        return timeLastLogin;
+    }
+
+    public void setTimeLastLogin(Date timeLastLogin) {
+        this.timeLastLogin = timeLastLogin;
+    }
+
+    public Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    public void setTimeUpdated(Date timeUpdated) {
+        this.timeUpdated = timeUpdated;
+    }
+
 }

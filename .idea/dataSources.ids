@@ -1653,171 +1653,185 @@
       <column name="definition" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
     </table>
     <table name="tb_articles" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_article" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5paH56ugaWQ="/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIwg5aSW6ZSu"/>
-      <column name="title" sqlType="varchar" precision="512" scale="0" nullable="true" jdbcType="12" def="Jyc=" remarks="5paH56ug5qCH6aKY"/>
-      <column name="comments" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5" def="MA==" remarks="5paH56ug6K+E6K665pWw55uu"/>
-      <column name="flag_share" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <column name="flag_comment" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag_access" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5paH56ug5qCH6K+G77yMMCDmraPluLjvvIwxIOWIoOmZpA=="/>
-      <column name="created_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="created_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <column name="update_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="update_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <primary-key name="tb_articles_pk" columns="id_article"/>
-      <foreign-key name="tb_articles_fk" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="tb_sections_fk" table="tb_sections" schema="public" catalog="db_mytest" columns="id_article"/>
+      <column name="idArticle" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5paH56ugaWTvvIzkuLvplK4="/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIwg5aSW6ZSu"/>
+      <column name="title" sqlType="varchar" precision="512" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="5paH56ug5qCH6aKY"/>
+      <column name="countComment" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5paH56ug6K+E6K665pWw55uu"/>
+      <column name="flagShare" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="5YiG5Lqr5qCH6K+G"/>
+      <column name="flagComment" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="6K+E6K665qCH6K+G"/>
+      <column name="flagAccess" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="6K6/6Zeu5qCH6K+G"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="5paH56ug5qCH6K+G77yMdHJ1ZSDmraPluLjvvIxmYWxzZSDliKDpmaQ="/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="timeUpdated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5pu05paw5pe26Ze0"/>
+      <primary-key name="tb_articles_pk" columns="idArticle"/>
+      <foreign-key name="tb_articles_fk" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tb_sections_fk" table="tb_sections" schema="public" catalog="db_mytest" columns="idArticle"/>
     </table>
     <table name="tb_comments" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_comment" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="6K+E6K66aWQ="/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIwg5aSW6ZSu"/>
-      <column name="id_section" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="56ug6IqCIGlk77yMIOWklumUrg=="/>
-      <column name="id_reply" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idComment" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="6K+E6K66aWQs5Li76ZSu"/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIwg5aSW6ZSu"/>
+      <column name="idSection" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="56ug6IqCIGlk77yMIOWklumUrg=="/>
+      <column name="idReply" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5Zue5aSNaWTvvIzlpJbplK4="/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
       <column name="contents" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12" remarks="6K+E6K665YaF5a65"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="6K+E6K665qCH6K+G77yMIDAg5q2j5bi477yMIDEg5Yig6Zmk"/>
-      <primary-key name="tb_comments_pk" columns="id_comment"/>
-      <foreign-key name="tb_comments_fk2" columns="id_reply" ref-table="tb_comments" ref-schema="public" ref-catalog="" ref-columns="id_comment" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="tb_comments_fk3" columns="id_section" ref-table="tb_sections" ref-schema="public" ref-catalog="" ref-columns="id_section" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="tb_comments_fk1" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="tb_comments_fk2" table="tb_comments" schema="public" catalog="db_mytest" columns="id_reply"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="6K+E6K665qCH6K+G77yMIHRydWUg5q2j5bi477yMIGZhbHNlIOWIoOmZpA=="/>
+      <primary-key name="tb_comments_pk" columns="idComment"/>
+      <foreign-key name="tb_comments_fk2" columns="idReply" ref-table="tb_comments" ref-schema="public" ref-catalog="" ref-columns="idComment" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tb_comments_fk3" columns="idSection" ref-table="tb_sections" ref-schema="public" ref-catalog="" ref-columns="idSection" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tb_comments_fk1" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tb_comments_fk2" table="tb_comments" schema="public" catalog="db_mytest" columns="idReply"/>
     </table>
     <table name="tb_fans" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_fans" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="57KJ5LidaWTvvIwg5aSW6ZSu"/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3IGlk"/>
-      <column name="fans" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="57KJ5Lid5qCH6K+G77yMMCDkuLrmraPluLjvvIwxIOS4uuWPlua2iOeyieS4neWFs+ezuw=="/>
-      <column name="created_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91" remarks="5oiQ5Li657KJ5Lid55qE55So5oi355qE55So5oi3aWTvvIwg5aSW6ZSu"/>
-      <column name="created_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <primary-key name="tb_fans_pk" columns="id_fans"/>
-      <foreign-key name="tb_fans_fk1" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="tb_fans_fk2" columns="fans" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
+      <column name="idFans" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="57KJ5LidaWTvvIwg5Li76ZSu"/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3IGlkLOWklumUrg=="/>
+      <column name="userNo" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi35Y+377yM5aSW6ZSu"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="57KJ5Lid5qCH6K+G77yMdHJ1ZSDkuLrmraPluLjvvIxmYWxzZSDkuLrlj5bmtojnsonkuJ3lhbPns7s="/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <primary-key name="tb_fans_pk" columns="idFans"/>
+      <foreign-key name="tb_fans_fk1" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tb_fans_fk2" columns="userNo" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="userNo" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="tb_friends" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_friend" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
-      <column name="friend" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="created_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <column name="created_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <primary-key name="tb_friends_pk" columns="id_friend"/>
-      <foreign-key name="tb_friends_fk1" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="tb_friends_fk2" columns="friend" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
+      <column name="idFriend" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5aW95Y+LaWTvvIzkuLvplK4="/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIzlpJbplK4="/>
+      <column name="userNo" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5aW95Y+L77yM5aSW6ZSu"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="54q25oCB5qCH6K+G"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <primary-key name="tb_friends_pk" columns="idFriend"/>
+      <foreign-key name="tb_friends_fk1" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tb_friends_fk2" columns="userNo" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="userNo" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="tb_note" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_note" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="title" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="contents" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag_access" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <column name="created_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="created_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <foreign-key name="tb_note_fk" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="tb_note_pk" unique="true" columns="id_note"/>
+    <table name="tb_notes" schema="public" catalog="db_mytest" type="TABLE">
+      <column name="idNote" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="56yU6K6waWTvvIzkuLvplK4="/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIzlpJbplK4="/>
+      <column name="title" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="56yU6K6w5qCH6aKY"/>
+      <column name="contents" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12" remarks="5YaF5a65"/>
+      <column name="flagAccess" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="6K6/6Zeu5qCH6K+G"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="54q25oCB5qCH6K+G"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <primary-key name="tb_notes_pk" columns="idNote"/>
+      <foreign-key name="tb_note_fk" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="tb_role" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_role" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
-      <column name="role_name" sqlType="varchar" precision="32" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag_role" sqlType="varchar" precision="9" scale="0" nullable="true" jdbcType="12" def="JzAwMDAwMDAwMCc="/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <primary-key name="tb_role_pk" columns="id_role"/>
-      <exported-key name="tb_users_fk" table="tb_users" schema="public" catalog="db_mytest" columns="id_role"/>
+    <table name="tb_roles" schema="public" catalog="db_mytest" type="TABLE">
+      <column name="idRole" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="roleName" sqlType="varchar" precision="32" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="IOinkuiJsuWQjeensA=="/>
+      <column name="flagRole" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="6KeS6Imy5qCH6K+G"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="54q25oCB5qCH6K+G"/>
+      <primary-key name="tb_role_pk" columns="idRole"/>
+      <exported-key name="tb_users_fk" table="tb_users" schema="public" catalog="db_mytest" columns="idRole"/>
     </table>
     <table name="tb_says" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_say" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_comment" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
-      <column name="id_reply" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
-      <column name="contents" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <foreign-key name="tb_says_fk2" columns="id_comment" ref-table="tb_says" ref-schema="public" ref-catalog="" ref-columns="id_say" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="tb_says_fk3" columns="id_reply" ref-table="tb_says" ref-schema="public" ref-catalog="" ref-columns="id_say" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="tb_says_fk1" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="tb_says_fk2" table="tb_says" schema="public" catalog="db_mytest" columns="id_comment"/>
-      <exported-key name="tb_says_fk3" table="tb_says" schema="public" catalog="db_mytest" columns="id_reply"/>
-      <index name="tb_says_pk" unique="true" columns="id_say"/>
+      <column name="idSay" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="6K+06K+0aWTvvIzkuLvplK4="/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIzlpJbplK4="/>
+      <column name="idComment" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="6K+E6K66aWQs5aSW6ZSu77yM5Y+C6ICDaWRTYXk="/>
+      <column name="idReply" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="5Zue5aSNaWQs5aSW6ZSu77yM5Y+C6ICDaWRTYXk="/>
+      <column name="contents" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12" remarks="5YaF5a65"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="54q25oCB5qCH6K+G"/>
+      <primary-key name="tb_says_pk" columns="idSay"/>
+      <foreign-key name="tb_says_fk2" columns="idComment" ref-table="tb_says" ref-schema="public" ref-catalog="" ref-columns="idSay" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tb_says_fk3" columns="idReply" ref-table="tb_says" ref-schema="public" ref-catalog="" ref-columns="idSay" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tb_says_fk1" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tb_says_fk2" table="tb_says" schema="public" catalog="db_mytest" columns="idComment"/>
+      <exported-key name="tb_says_fk3" table="tb_says" schema="public" catalog="db_mytest" columns="idReply"/>
     </table>
     <table name="tb_sections" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_section" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="56ug6IqCaWTvvIzkuLvplK4="/>
-      <column name="id_article" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5paH56ugaWTvvIwg5aSW6ZSu"/>
+      <column name="idSection" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="56ug6IqCaWTvvIzkuLvplK4="/>
+      <column name="idArticle" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5paH56ugaWTvvIwg5aSW6ZSu"/>
       <column name="title" sqlType="varchar" precision="512" scale="0" nullable="true" jdbcType="12" remarks="56ug6IqC5qCH6aKY"/>
       <column name="contents" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12" remarks="56ug6IqC5YaF5a65"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="56ug6IqC5qCH6K+G77yMIDAg5q2j5bi477yMIDEg5Yig6Zmk"/>
-      <primary-key name="tb_sections_pk" columns="id_section"/>
-      <foreign-key name="tb_sections_fk" columns="id_article" ref-table="tb_articles" ref-schema="public" ref-catalog="" ref-columns="id_article" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="tb_comments_fk3" table="tb_comments" schema="public" catalog="db_mytest" columns="id_section"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="56ug6IqC5qCH6K+G77yMIHRydWUg5q2j5bi477yMIGZhbHNlIOWIoOmZpA=="/>
+      <primary-key name="tb_sections_pk" columns="idSection"/>
+      <foreign-key name="tb_sections_fk" columns="idArticle" ref-table="tb_articles" ref-schema="public" ref-catalog="" ref-columns="idArticle" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tb_comments_fk3" table="tb_comments" schema="public" catalog="db_mytest" columns="idSection"/>
     </table>
     <table name="tb_shares" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idShare" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="id_share" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
-      <column name="share_url" sqlType="varchar" precision="2048" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
-      <foreign-key name="tb_shares_fk" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="tb_shares_pk" unique="true" columns="id_share"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="shareUrl" sqlType="varchar" precision="2048" scale="0" nullable="true" jdbcType="12"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ=="/>
+      <primary-key name="tb_shares_pk" columns="idShare"/>
+      <foreign-key name="tb_shares_fk" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="tb_siteNavigation" schema="public" catalog="db_mytest" type="TABLE">
+      <column name="idNavigation" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="navigationName" sqlType="varchar" precision="512" scale="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="varchar" precision="2048" scale="0" nullable="true" jdbcType="12" def="TlVMTA=="/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ=="/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA=="/>
+      <column name="timeUpdated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA=="/>
+      <primary-key name="tb_siteNavigation_pk" columns="idNavigation"/>
+    </table>
+    <table name="tb_userInfo" schema="public" catalog="db_mytest" type="TABLE">
+      <column name="idInfo" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12"/>
+      <column name="timeUpdate" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <primary-key name="tb_userInfo_pk" columns="idInfo"/>
+      <foreign-key name="tb_userInfo_fk" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="tb_users" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIzkuLvplK4="/>
-      <column name="id_role" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="6KeS6ImyaWQ="/>
-      <column name="user_number" sqlType="varchar" precision="13" scale="0" nullable="false" jdbcType="12" def="TlVMTA==" remarks="55So5oi35Y+356CB77yM5ZSv5LiA"/>
-      <column name="user_name" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55So5oi35ZCN"/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="55So5oi3aWTvvIzkuLvplK4="/>
+      <column name="userNo" sqlType="varchar" precision="13" scale="0" nullable="false" jdbcType="12" def="TlVMTA==" remarks="55So5oi35Y+356CB77yM5ZSv5LiA"/>
+      <column name="idRole" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="6KeS6ImyaWQ="/>
+      <column name="userName" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55So5oi35ZCN"/>
       <column name="password" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55So5oi35a+G56CB"/>
-      <column name="user_title" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55So5oi3562J57qn56ew5ZG8"/>
+      <column name="userTitle" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55So5oi3562J57qn56ew5ZG8"/>
       <column name="sex" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" remarks="55So5oi35oCn5Yir"/>
       <column name="birthday" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91" remarks="5Ye655Sf5pel5pyf"/>
-      <column name="bit_coins" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5" def="MA==" remarks="55So5oi356ev5YiG"/>
+      <column name="bitCoins" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5" def="MA==" remarks="55So5oi356ev5YiG"/>
       <column name="email" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55S15a2Q6YKu5Lu2"/>
       <column name="address" sqlType="varchar" precision="256" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="6K+m57uG5Zyw5Z2A"/>
       <column name="mobile" sqlType="varchar" precision="12" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="56e75Yqo55S16K+d"/>
-      <column name="flag" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="55So5oi35qCH6K+G"/>
-      <column name="count_fans" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="57KJ5Lid5pWw"/>
-      <column name="count_article" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5paH56ug5pWw"/>
-      <column name="count_share" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5YiG5Lqr5pWw"/>
-      <column name="count_comment" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5bmz6Lev5pWw"/>
-      <column name="count_says" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="6K+06K+05pWw"/>
-      <column name="created_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91" remarks="55So5oi35Yib5bu65pe26Ze0"/>
-      <column name="created_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <column name="last_login_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91" remarks="55So5oi35pyA5ZCO55m76ZmG5pe26Ze0"/>
-      <column name="last_login_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <column name="update_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="update_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <primary-key name="tb_users_pkey" columns="id_user,user_number"/>
-      <foreign-key name="tb_users_fk" columns="id_role" ref-table="tb_role" ref-schema="public" ref-catalog="" ref-columns="id_role" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="tb_articles_fk" table="tb_articles" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_comments_fk1" table="tb_comments" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_fans_fk1" table="tb_fans" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_fans_fk2" table="tb_fans" schema="public" catalog="db_mytest" columns="fans"/>
-      <exported-key name="tb_friends_fk1" table="tb_friends" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_friends_fk2" table="tb_friends" schema="public" catalog="db_mytest" columns="friend"/>
-      <exported-key name="tb_note_fk" table="tb_note" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_says_fk1" table="tb_says" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_shares_fk" table="tb_shares" schema="public" catalog="db_mytest" columns="id_user"/>
-      <exported-key name="tb_words_fk" table="tb_words" schema="public" catalog="db_mytest" columns="id_user"/>
-      <index name="tb_users_pk1" unique="true" columns="id_user"/>
-      <index name="tb_users_pk2" unique="true" columns="user_number"/>
+      <column name="flag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="dHJ1ZQ==" remarks="55So5oi35qCH6K+G"/>
+      <column name="countFans" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="57KJ5Lid5pWw"/>
+      <column name="countArticle" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5paH56ug5pWw"/>
+      <column name="countShare" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5YiG5Lqr5pWw"/>
+      <column name="countComment" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="5bmz6Lev5pWw"/>
+      <column name="countSays" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4" def="MA==" remarks="6K+06K+05pWw"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="timeLastLogin" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="timeUpdated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <primary-key name="tb_users_pkey" columns="idUser,userNo"/>
+      <foreign-key name="tb_users_fk" columns="idRole" ref-table="tb_roles" ref-schema="public" ref-catalog="" ref-columns="idRole" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tb_articles_fk" table="tb_articles" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_comments_fk1" table="tb_comments" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_fans_fk1" table="tb_fans" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_fans_fk2" table="tb_fans" schema="public" catalog="db_mytest" columns="userNo"/>
+      <exported-key name="tb_friends_fk1" table="tb_friends" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_friends_fk2" table="tb_friends" schema="public" catalog="db_mytest" columns="userNo"/>
+      <exported-key name="tb_note_fk" table="tb_notes" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_says_fk1" table="tb_says" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_shares_fk" table="tb_shares" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_userInfo_fk" table="tb_userInfo" schema="public" catalog="db_mytest" columns="idUser"/>
+      <exported-key name="tb_words_fk" table="tb_words" schema="public" catalog="db_mytest" columns="idUser"/>
+      <index name="tb_users_pk1" unique="true" columns="idUser"/>
+      <index name="tb_users_pk2" unique="true" columns="userNo"/>
     </table>
-    <table name="tb_words" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_word" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_user" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12" def="TlVMTA=="/>
-      <column name="word" sqlType="varchar" precision="40" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="5Y2V6K+N5oiW6K+N57uE"/>
-      <column name="phonetic" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="6Z+z5qCH"/>
-      <column name="pronounce" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2" remarks="5Y2V6K+N5Y+R6Z+z"/>
-      <column name="created_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="created_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <column name="update_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="update_time" sqlType="time" precision="15" scale="6" nullable="true" jdbcType="92"/>
-      <primary-key name="tb_words_pk" columns="id_word"/>
-      <foreign-key name="tb_words_fk" columns="id_user" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="id_user" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="tb_words_details_fk" table="tb_words_details" schema="public" catalog="db_mytest" columns="id_word"/>
-    </table>
-    <table name="tb_words_details" schema="public" catalog="db_mytest" type="TABLE">
-      <column name="id_details" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="6K+N5YW45YaF5a65"/>
-      <column name="id_word" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12"/>
+    <table name="tb_wordInfo" schema="public" catalog="db_mytest" type="TABLE">
+      <column name="idInfo" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="6K+m57uGaWTvvIzkuLvplK4="/>
+      <column name="idWord" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5Y2V6K+NaWTvvIzlpJbplK4="/>
       <column name="shortcut" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="566A55+t5rOo6YeK"/>
       <column name="details" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12" remarks="6K+m57uG6K+05piO77yM5aaC5L6L5Y+l562J"/>
-      <primary-key name="tb_words_details_pk" columns="id_details"/>
-      <foreign-key name="tb_words_details_fk" columns="id_word" ref-table="tb_words" ref-schema="public" ref-catalog="" ref-columns="id_word" update-rule="3" delete-rule="3" deferrability="2"/>
+      <column name="examples" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12" remarks="5L6L5a2Q"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="timeUpdated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5pu05paw5pe26Ze0"/>
+      <primary-key name="tb_wordInfo_pk" columns="idInfo"/>
+      <foreign-key name="tb_wordInfo_fk" columns="idWord" ref-table="tb_words" ref-schema="public" ref-catalog="" ref-columns="idWord" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="tb_words" schema="public" catalog="db_mytest" type="TABLE">
+      <column name="idWord" sqlType="varchar" precision="64" scale="0" nullable="false" jdbcType="12" remarks="5Y2V6K+NaWQs5Li76ZSu"/>
+      <column name="idUser" sqlType="varchar" precision="64" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="55So5oi3aWTvvIzlpJbplK4="/>
+      <column name="word" sqlType="varchar" precision="40" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="5Y2V6K+N5oiW6K+N57uE"/>
+      <column name="phonetic" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12" def="TlVMTA==" remarks="6Z+z5qCH"/>
+      <column name="pronounce" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2" remarks="5Y2V6K+N5Y+R6Z+z5pWw5o2u"/>
+      <column name="timeCreated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="timeUpdated" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93" def="TlVMTA==" remarks="5pu05paw5pe26Ze0"/>
+      <primary-key name="tb_words_pk" columns="idWord"/>
+      <foreign-key name="tb_words_fk" columns="idUser" ref-table="tb_users" ref-schema="public" ref-catalog="" ref-columns="idUser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tb_wordInfo_fk" table="tb_wordInfo" schema="public" catalog="db_mytest" columns="idWord"/>
+      <index name="tb_words_index" unique="false" columns="word"/>
     </table>
     <procedure name="RI_FKey_cascade_del" schema="pg_catalog" catalog="db_mytest" type="2" remarks="cmVmZXJlbnRpYWwgaW50ZWdyaXR5IE9OIERFTEVURSBDQVNDQURF">
       <prototype>

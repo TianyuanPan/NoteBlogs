@@ -46,7 +46,7 @@ public class AccessFilter implements Filter {
 
 //		if(!url.matches(resource)){
 //			if(!url.matches(login)){
-//				if(SessionUtil.getUser(request) == null){
+//				if(SessionUtil.getUserByNo(request) == null){
 //					response.sendRedirect(request.getContextPath() + "/login");
 //					return;
 //				}
@@ -54,7 +54,7 @@ public class AccessFilter implements Filter {
 //		}
 //		if(!url.matches(reg1)){
 //			if (url.matches(reg4)){
-//				if(SessionUtil.getUser(request) == null){
+//				if(SessionUtil.getUserByNo(request) == null){
 //					response.sendRedirect(request.getContextPath() + "/login");
 //					return;
 //				}
